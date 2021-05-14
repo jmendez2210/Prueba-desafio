@@ -1,63 +1,60 @@
-$(document).ready(function() {
+$(function(){
 
-  if (window.innerWidth < 768) {
-    $('.btn').addClass('btn-sm');
-  }
+  // inicio  selectores
 
-  // Medida por defecto (Sin ningún nombre de clase)
-  else if (window.innerWidth < 900) {
-    $('.btn').removeClass('btn-sm');
-  }
+    var padre = $('.card-body').parent().find('a');
 
-  // Si el ancho del navegador es menor a 1200 px le asigno la clase 'btn-lg'
-  else if (window.innerWidth < 1200) {
-    $('.btn').addClass('btn-lg');
-  }
-
-});
+    var btnUno = padre.eq(0);
+    var btnDos = padre.eq(1);
+    var btnTres = padre.eq(2);
+    var btnCuatro = padre.eq(3);
 
 
+    // USO DEL METODO CHILDREN()
+  	var hijos = $('.card').children();
+  	console.log('Muestra los hijos--->', hijos);
 
-$(function() {
-  $('[data-toggle="tooltip"]').tooltip()
-});
+   	var textoUno = hijos.eq(1).find('p.card-text').hide();
+  	var textoDos = hijos.eq(3).find('p.card-text').hide();
+    var textoTres = hijos.eq(5).find('p.card-text').hide();
+    var textoCuatro = hijos.eq(7).find('p.card-text').hide();
+    console.log('Mostrar los textos--->', textoUno,textoDos,textoTres);
 
 
-$(document).ready(function(){
-  // evento click
-    $('#clic-evento').click(function(){
-      alert("El correo fue enviado correctamente...");
-    });
-  // dblclick cambio color letra
-  var toggle = true; // Toggle state
-         $("h4").on({
-             dblclick: function () {
-                 if (toggle) {
-                     // Change fonts title to red
-                     $(this).css("color", "red");
-                     toggle = false;
-                 } else {
+    //EVENTOS EN JQUERY
 
-                      // Change fonts title to black
-                     $(this).css("color", "black");
-                     toggle = true;
-                 }
-             }
-         });
-         // inicio toggle
-         $('#ocultar-contenido').on('click',function(){
-      $('p').toggle();
-   });
-   // iniciotiramisu
-   $('#ocultar-contenido-TIRAMISÚ').on('click',function(){
-   $('p').toggle();
-   });
-   // inicioplateada
-   $('#ocultar-contenido-PLATEADA').on('click',function(){
-   $('p').toggle();
-   });
+    btnUno.click(function(event){
+        event.preventDefault();
+        console.log('Hacemos click en el boton uno');
+        textoUno.fadeToggle('fast');
+        hola();
+      });
+
+      btnDos.click(function(event){
+          event.preventDefault();
+          console.log('Hacemos click en el boton uno');
+          textoDos.fadeToggle('fast');
+          hola();
+        });
+
+        btnTres.click(function(event){
+            event.preventDefault();
+            console.log('Hacemos click en el boton uno');
+            textoTres.fadeToggle('fast');
+            hola();
+          });
+
+          btnCuatro.click(function(event){
+              event.preventDefault();
+              console.log('Hacemos click en el boton uno');
+              textoCuatro.fadeToggle('fast');
+              hola();
+            });
+
+      $('[data-toggle="tooltip"]').tooltip()
+
+      $('[data-toggle="popover"]').popover()
 
 
 
-
-     });
+  });
