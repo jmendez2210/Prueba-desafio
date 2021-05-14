@@ -1,0 +1,30 @@
+body{
+    font-family: 'Cabin', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 0;
+}
+
+.object-fit {
+  /* padding: 20px 0 50px 0; */
+  height:  200px;
+  object-fit: fill;
+  align-content: center;
+  }
+
+.lista-rrss li{
+  list-style: none;
+  display: inline-block;
+}
+
+.lista-rrss a{
+    color: #ffffff;
+    text-decoration:none;
+
+}
